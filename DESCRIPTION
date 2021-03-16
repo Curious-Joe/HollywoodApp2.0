@@ -1,0 +1,16 @@
+Package: HollywoodMovies2.0
+Title: Explore Knn with Hollywood Movies
+Version: 0.0.0.9000
+Authors@R: person('Arafath', 'Hossain', email = 'a.h.fahad90@gmail.com', role = c('cre', 'aut'))
+Description: This Shiny app demonstrte how K nearest neighbor can be used to group 
+  observations based on their features. For demonstration purpose, a dataset of Hollywood movies 
+  have been used. Using the app, a user can explore profitability of the movies historically, and 
+  decide which movies are closest in nature based on their chosen criteria.
+License: MIT + file LICENSE
+Imports: 
+    config,
+    golem,
+    shiny
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
