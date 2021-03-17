@@ -15,11 +15,14 @@
 ## Add meta data about your application
 golem::fill_desc(
   pkg_name = "HollywoodMovies2.0", # The Name of the package containing the App 
-  pkg_title = "PKG_TITLE", # The Title of the package containing the App 
-  pkg_description = "PKG_DESC.", # The Description of the package containing the App 
-  author_first_name = "AUTHOR_FIRST", # Your First Name
-  author_last_name = "AUTHOR_LAST", # Your Last Name
-  author_email = "AUTHOR@MAIL.COM", # Your Email
+  pkg_title = "Explore Knn with Hollywood Movies", # The Title of the package containing the App 
+  pkg_description = "This Shiny app demonstrte how K nearest neighbor can be used to group 
+  observations based on their features. For demonstration purpose, a dataset of Hollywood movies 
+  have been used. Using the app, a user can explore profitability of the movies historically, and 
+  decide which movies are closest in nature based on their chosen criteria.", # The Description of the package containing the App 
+  author_first_name = "Arafath", # Your First Name
+  author_last_name = "Hossain", # Your Last Name
+  author_email = "a.h.fahad90@gmail.com", # Your Email
   repo_url = NULL # The URL of the GitHub Repo (optional) 
 )     
 
@@ -28,11 +31,11 @@ golem::set_golem_options()
 
 ## Create Common Files ----
 ## See ?usethis for more information
-usethis::use_mit_license( name = "Golem User" )  # You can set another license here
+usethis::use_mit_license(  )  # You can set another license here
 usethis::use_readme_rmd( open = FALSE )
 usethis::use_code_of_conduct()
 usethis::use_lifecycle_badge( "Experimental" )
-usethis::use_news_md( open = FALSE )
+# usethis::use_news_md( open = FALSE )
 
 ## Use git ----
 usethis::use_git()
@@ -46,8 +49,8 @@ golem::use_recommended_deps()
 
 ## Favicon ----
 # If you want to change the favicon (default is golem's one)
-golem::remove_favicon()
-golem::use_favicon() # path = "path/to/ico". Can be an online file. 
+# golem::remove_favicon()
+# golem::use_favicon() # path = "path/to/ico". Can be an online file. 
 
 ## Add helper functions ----
 golem::use_utils_ui()

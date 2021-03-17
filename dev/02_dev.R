@@ -15,27 +15,42 @@
 
 ## Dependencies ----
 ## Add one line by package you want to add as dependency
-usethis::use_package( "thinkr" )
+usethis::use_package( "ggplot2" )
+usethis::use_package( "dplyr" )
+usethis::use_package( "shinydashboard" )
+usethis::use_package( "stringr" )
+usethis::use_package( "toTitleCase" )
+usethis::use_package( "stringr" )
+usethis::use_package( "cluster" )
+usethis::use_package( "shinipsum" )
+usethis::use_package( "plotly" )
+
+
 
 ## Add modules ----
 ## Create a module infrastructure in R/
-golem::add_module( name = "name_of_module1" ) # Name of the module
-golem::add_module( name = "name_of_module2" ) # Name of the module
+golem::add_module( name = "summary" ) # Name of the module
+golem::add_module( name = "biv_analysis" ) # Name of the module
+golem::add_module( name = "cluster" ) # Name of the module
+golem::add_module( name = "data" ) # Name of the module
+golem::add_module( name = "infoBox" )
+golem::add_module( name = "valueBox" )
+
 
 ## Add helper functions ----
 ## Creates ftc_* and utils_*
-golem::add_fct( "helpers" ) 
-golem::add_utils( "helpers" )
+# golem::add_fct( "helpers" ) 
+golem::add_utils( "helper" )
 
 ## External resources
 ## Creates .js and .css files at inst/app/www
-golem::add_js_file( "script" )
-golem::add_js_handler( "handlers" )
-golem::add_css_file( "custom" )
+# golem::add_js_file( "script" )
+# golem::add_js_handler( "handlers" )
+# golem::add_css_file( "custom" )
 
 ## Add internal datasets ----
 ## If you have data in your package
-usethis::use_data_raw( name = "my_dataset", open = FALSE ) 
+usethis::use_data_raw( name = "movies", open = FALSE ) 
 
 ## Tests ----
 ## Add one line by test you want to create
@@ -44,14 +59,14 @@ usethis::use_test( "app" )
 # Documentation
 
 ## Vignette ----
-usethis::use_vignette("HollywoodMovies2.0")
-devtools::build_vignettes()
+# usethis::use_vignette("HollywoodMovies2.0")
+# devtools::build_vignettes()
 
 ## Code coverage ----
 ## (You'll need GitHub there)
 usethis::use_github()
-usethis::use_travis()
-usethis::use_appveyor()
+# usethis::use_travis()
+# usethis::use_appveyor()
 
 # You're now set! ----
 # go to dev/03_deploy.R
