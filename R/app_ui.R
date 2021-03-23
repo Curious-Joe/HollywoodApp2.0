@@ -58,7 +58,7 @@ app_ui <- function(request) {
       # 2.1 Body: Info boxes ----
       tabItems(
         tabItem(tabName = 'dashboard', mod_summary_ui("summary_ui_tab1")),
-        tabItem(tabName = 'plots'),
+        tabItem(tabName = 'plots', mod_biv_analysis_ui("biv_analysis_ui_1")),
         tabItem(tabName = "model"),
         tabItem(tabName = 'data')
       )

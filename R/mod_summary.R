@@ -48,7 +48,7 @@ mod_summary_ui <- function(id){
     
     hr(),
     
-    # 2.4 VALUE BOX ----
+    # 1.4 VALUE BOX ----
     # creating value boxes in dashboard body (bottom)
     fluidRow(
       box(width = 12,
@@ -67,9 +67,8 @@ mod_summary_ui <- function(id){
 #' summary Server Function
 #'
 #' @noRd 
-mod_summary_server <- function(input, output, session, data
-                               # , selected_genre
-                               ){
+mod_summary_server <- function(input, output, session, 
+                               data){
   ns <- session$ns
 
   # x and y as reactive expressions
@@ -77,7 +76,7 @@ mod_summary_server <- function(input, output, session, data
   # y <- reactive({ str_to_title(input$y)})
   
   
-  # 2.0 INFO BOXES ----
+  # 1.0 INFO BOXES ----
   box1 <- callModule(mod_infoBox_server, "infoBox_ui_1",
                     title  = "Highest grossing movie", icon = "film",
                     data = data,
@@ -100,7 +99,7 @@ mod_summary_server <- function(input, output, session, data
   
   
   
-  # 2.1 TIME SERIES PLOT ----
+  # 1.1 TIME SERIES PLOT ----
   # # creating time series plot
   output$time_series = renderPlot({
     data() %>%  dplyr::count(year, genre) %>%
@@ -112,7 +111,7 @@ mod_summary_server <- function(input, output, session, data
 
   })
   
-  # 2.3 ZOOMED PLOT ----
+  # 1.2 ZOOMED PLOT ----
   ranges2 <- reactiveValues(x = NULL, y = NULL)
 
   output$time_series_zoom <- renderPlotly({
@@ -144,7 +143,7 @@ mod_summary_server <- function(input, output, session, data
     }
   })
   
-  # 2.4 VALUE BOX ----
+  # 1.4 VALUE BOX ----
   valuebox1 <- callModule(mod_valueBox_server, "valueBox_ui_1",
                           subtitle = "Median Gross Earning (mln)", 
                           icon = "dollar", 
@@ -164,61 +163,6 @@ mod_summary_server <- function(input, output, session, data
                           subtitle = "Median Viewer Rating", 
                           icon = "star", 
                           data = data, target = "rating")
-  
-  
-  # creating value box for dashboard tab page (bottom)
-  # output$med_grossing = renderValueBox({
-  #   valueBox(
-  #     value = round(median((movies_selected()[,"gross"]))/1000000,1),
-  #     subtitle = "Median gross earnings (mln)",
-  #     icon = icon("dollar"),
-  #     color = if(median((movies_selected()[,"gross"])) > gross){
-  #       "green"
-  #     } else {
-  #       "red"
-  #     }
-  #   )
-  # })
-  
-  # output$med_budget = renderValueBox({
-  #   valueBox(
-  #     value = round(median((movies_selected()[,"budget"]))/1000000,1),
-  #     subtitle = "Median gross budget (mln)",
-  #     icon = icon("dollar"),
-  #     color = if(median((movies_selected()[,"budget"])) > budget){
-  #       "green"
-  #     } else {
-  #       "red"
-  #     }
-  #   )
-  # })
-  # 
-  # output$med_profit = renderValueBox({
-  #   valueBox(
-  #     value = round(median(movies_selected()$gross-movies_selected()$budget)/1000000,1),
-  #     subtitle = "Median profit (mln)",
-  #     icon = icon("dollar"),
-  #     color = if(median((movies_selected()[,"gross"])-(movies_selected()[,'budget'])) > profit){
-  #       "green"
-  #     } else {
-  #       "red"
-  #     }
-  #   )
-  # })
-  # 
-  # output$med_rating = renderValueBox({
-  #   valueBox(
-  #     value = median((movies_selected()[,"rating"])),
-  #     subtitle = "Median viewer rating",
-  #     icon = icon("star"),
-  #     color = if(median((movies_selected()[,"rating"])) > rating){
-  #       "green"
-  #     } else {
-  #       "red"
-  #     }
-  #   )
-  # })
-  # 
 }
     
 ## To be copied in the UI

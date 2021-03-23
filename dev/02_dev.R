@@ -35,6 +35,7 @@ golem::add_module( name = "cluster" ) # Name of the module
 golem::add_module( name = "data" ) # Name of the module
 golem::add_module( name = "infoBox" )
 golem::add_module( name = "valueBox" )
+golem::add_module( name = "plot" )
 
 
 ## Add helper functions ----
