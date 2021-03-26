@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 <!-- badges: end -->
 
 The goal of HollywoodMovies2.0 is a Shiny app using `golem` framework.
@@ -27,4 +27,6 @@ If you are interested you can install this application as a R library.
 ``` r
 # install.packages("remotes")
 remotes::install_github("Curious-Joe/HollywoodApp2.0")
+# run the shiny app
+HollywoodMovies2.0::run_app(dataset = movies)
 ```
