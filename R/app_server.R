@@ -5,10 +5,11 @@
 #' @import shiny
 #' @noRd
 app_server <- function( input, output, session ) {
+
   
   movies_selected <- reactive({
     req(input$selected_genre, cancelOutput = FALSE) # ensure availablity of value before proceeding
-    filter(movies, genre %in% input$selected_genre)
+    dplyr::filter(movies, genre %in% input$selected_genre)
   })
   
   # Header notication

@@ -41,7 +41,7 @@ mod_summary_ui <- function(id){
              wellPanel(
                h4("Zoomed in area of the plot"),
                h6("Hover over the bars to see the information in tooltip"),
-               plotlyOutput(outputId = ns("time_series_zoom"))
+               plotly::plotlyOutput(outputId = ns("time_series_zoom"))
              )
       )
     ),
@@ -114,7 +114,7 @@ mod_summary_server <- function(input, output, session,
   # 1.2 ZOOMED PLOT ----
   ranges2 <- reactiveValues(x = NULL, y = NULL)
 
-  output$time_series_zoom <- renderPlotly({
+  output$time_series_zoom <- plotly::renderPlotly({
     p <- data() %>%  dplyr::count(year, genre) %>%
       ggplot2::ggplot(ggplot2::aes(x = year, y = n, fill = genre,
                                    text = glue::glue(

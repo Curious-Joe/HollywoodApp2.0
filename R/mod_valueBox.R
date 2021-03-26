@@ -2,7 +2,7 @@
 #'
 #' @description Ui function to create the value boxes showing performance at the bottom of the Summary tab.
 #'
-#' @param id,input,output,session Internal parameters for {shiny}.
+#' @param id Internal parameters for {shiny}.
 #'
 #'
 #' @importFrom shiny NS tagList 
@@ -19,7 +19,7 @@ mod_valueBox_ui <- function(id){
 #' @description Server function to populate value boxes created by mod_valueBox_ui().
 #'
 #' 
-#' @param id,input,output,session Internal parameters for {shiny}
+#' @param input,output,session Internal parameters for {shiny}
 #' @param subtitle Title to be used in the info box
 #' @param icon Icon to be used in the box
 #' @param data Reactive data frame to be used to populate the content inside the box 
@@ -31,17 +31,17 @@ mod_valueBox_server <- function(input, output, session,
  
   output$value_box = renderValueBox({
     
-    value <- median(data()[, target], na.rm = T)
+    value <- stats::median(data()[, target], na.rm = T)
     
     valueBox(
       value = if(icon == "dollar"){
-        value <- dollar(value)
+        value <- dollar_cln(value)
       } else{
         value
       },
       subtitle = subtitle,
       icon = icon(icon),
-      color = if(value > median(movies[,target], na.rm = T)){
+      color = if(value > stats::median(movies[,target], na.rm = T)){
         "green"
       } else {
         "red"

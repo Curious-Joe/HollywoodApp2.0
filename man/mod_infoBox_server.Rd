@@ -7,6 +7,8 @@
 mod_infoBox_server(input, output, session, title, icon, data, based_on, target)
 }
 \arguments{
+\item{input, output, session}{Internal parameters for {shiny}}
+
 \item{title}{Title to be used in the info box}
 
 \item{icon}{Icon to be used in the box}
@@ -16,8 +18,6 @@ mod_infoBox_server(input, output, session, title, icon, data, based_on, target)
 \item{based_on}{Based on which factor to calculate the best performer}
 
 \item{target}{Which information about the top performer to collect}
-
-\item{id, input, output, session}{Internal parameters for {shiny}}
 }
 \description{
 Server function to populate information boxes created by mod_infoBox_ui().

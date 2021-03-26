@@ -7,7 +7,7 @@
 mod_infoBox_ui(id)
 }
 \arguments{
-\item{id, input, output, session}{Internal parameters for {shiny}.}
+\item{id}{Internal parameters for {shiny}.}
 }
 \description{
 Ui function to create the information boxes showing top performers at the top of the Summary tab.

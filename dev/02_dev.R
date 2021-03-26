@@ -24,6 +24,9 @@ usethis::use_package( "stringr" )
 usethis::use_package( "cluster" )
 usethis::use_package( "shinipsum" )
 usethis::use_package( "plotly" )
+usethis::use_package( "stats" )
+usethis::use_pipe()
+usethis::use_r( "movies" )
 
 
 

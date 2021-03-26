@@ -7,7 +7,7 @@
 mod_valueBox_ui(id)
 }
 \arguments{
-\item{id, input, output, session}{Internal parameters for {shiny}.}
+\item{id}{Internal parameters for {shiny}.}
 }
 \description{
 Ui function to create the value boxes showing performance at the bottom of the Summary tab.

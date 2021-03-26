@@ -7,6 +7,8 @@
 mod_valueBox_server(input, output, session, subtitle, icon, data, target)
 }
 \arguments{
+\item{input, output, session}{Internal parameters for {shiny}}
+
 \item{subtitle}{Title to be used in the info box}
 
 \item{icon}{Icon to be used in the box}
@@ -14,8 +16,6 @@ mod_valueBox_server(input, output, session, subtitle, icon, data, target)
 \item{data}{Reactive data frame to be used to populate the content inside the box}
 
 \item{target}{Which information about the top performer to collect}
-
-\item{id, input, output, session}{Internal parameters for {shiny}}
 }
 \description{
 Server function to populate value boxes created by mod_valueBox_ui().

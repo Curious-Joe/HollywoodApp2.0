@@ -7,7 +7,6 @@
 #' @noRd 
 #'
 #' @importFrom shiny NS tagList 
-#' @import ggplot2
 #' 
 mod_biv_analysis_ui <- function(id){
   ns <- NS(id)
@@ -133,18 +132,18 @@ mod_biv_analysis_server <- function(input, output, session,
     x_max <- reactive({max(data()[, input$x], na.rm = T)})
     x_labels <- reactive({
       if(x_max() > 10000){
-        label = comma
+        label = comma_cln
       }else {
-        label = waiver()
+        label = ggplot2::waiver()
       }
     })
     
     y_max <- reactive({max(data()[, input$y], na.rm = T)})
     y_labels <- reactive({
       if(y_max() > 10000){
-        label = comma
+        label = comma_cln
       } else {
-        label = waiver()
+        label = ggplot2::waiver()
       }
     })
     
@@ -164,9 +163,9 @@ mod_biv_analysis_server <- function(input, output, session,
   # 3.0 SUMMARY ----
   # 3.1 Median values ----
   output$med_x = renderText({
-    med = median(data()[,input$x], na.rm = TRUE)
+    med = stats::median(data()[,input$x], na.rm = TRUE)
     med = if(med >= 500000){
-      comma(med)
+      comma_cln(med)
     } else {
       med
     }
@@ -175,9 +174,9 @@ mod_biv_analysis_server <- function(input, output, session,
   })
   
   output$med_y = renderText({
-    med = median(data()[,input$y], na.rm = TRUE)
+    med = stats::median(data()[,input$y], na.rm = TRUE)
     med = if(med >= 500000){
-            comma(med)
+            comma_cln(med)
           } else {
             med
           }
@@ -188,7 +187,7 @@ mod_biv_analysis_server <- function(input, output, session,
   # 3.2 Correlation value ----
   output$cor = renderText({
     paste("3. Correlation of", x(), "and", y(), "=", 
-          round(cor(data()[,input$x], data()[,input$y]),2))
+          round(stats::cor(data()[,input$x], data()[,input$y]),2))
   })
   
  
