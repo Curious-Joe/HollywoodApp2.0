@@ -35,10 +35,10 @@ usethis::use_r( "movies" )
 golem::add_module( name = "summary" ) # Name of the module
 golem::add_module( name = "biv_analysis" ) # Name of the module
 golem::add_module( name = "cluster" ) # Name of the module
-golem::add_module( name = "data" ) # Name of the module
 golem::add_module( name = "infoBox" )
 golem::add_module( name = "valueBox" )
 golem::add_module( name = "plot" )
+golem::add_module( name = "cluster" )
 
 
 ## Add helper functions ----

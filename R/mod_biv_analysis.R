@@ -2,9 +2,8 @@
 #'
 #' @description A shiny Module.
 #'
-#' @param id,input,output,session Internal parameters for {shiny}.
+#' @param id Internal parameters for {shiny}.
 #'
-#' @noRd 
 #'
 #' @importFrom shiny NS tagList 
 #' 
@@ -77,8 +76,12 @@ mod_biv_analysis_ui <- function(id){
 }
     
 #' biv_analysis Server Function
+#' 
+#' @description A server module to pupulate content of bivariate analysis tab.
+#' @param input,output,session Internal parameters for {shiny}.
+#' @param data Reactive dataframe that is filtered based on user selected movie genre.
+#' @param genre Reactive output of genre inputs present in app_ui.
 #'
-#' @noRd 
 mod_biv_analysis_server <- function(input, output, session,
                                     data, genre){
   ns <- session$ns
@@ -124,7 +127,7 @@ mod_biv_analysis_server <- function(input, output, session,
   # Create scatterplot object the plotOutput function is expecting 
   output$scatterplot_des <- renderText({
     glue::glue("{x()} Vs {y()} of 
-           {nrow(data())} {genre()} movies.")
+           {nrow(data())} {paste(genre(), collapse = ', ')} movies.")
   })
   
   # 2.3 Plot ----

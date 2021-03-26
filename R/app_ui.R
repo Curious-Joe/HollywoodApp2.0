@@ -25,8 +25,6 @@ app_ui <- function(request) {
         hr(),
         menuItem('Clustering Model', tabName = 'model', icon = icon('bar-chart-o')),
         hr(),
-        menuItem('Data', tabName = 'data', icon = icon('clipboard')),
-        hr(),
         
         # 1.2 Sidebar genre search ----
         # subsetting inputs in sidebar - data tab
@@ -59,7 +57,7 @@ app_ui <- function(request) {
       tabItems(
         tabItem(tabName = 'dashboard', mod_summary_ui("summary_ui_tab1")),
         tabItem(tabName = 'plots', mod_biv_analysis_ui("biv_analysis_ui_1")),
-        tabItem(tabName = "model"),
+        tabItem(tabName = "model", mod_cluster_ui("cluster_ui_1")),
         tabItem(tabName = 'data')
       )
     ),

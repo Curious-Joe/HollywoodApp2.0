@@ -21,4 +21,5 @@ app_server <- function( input, output, session ) {
   callModule(mod_summary_server, "summary_ui_tab2",  data = movies_selected)
   callModule(mod_biv_analysis_server, "biv_analysis_ui_1", 
              data = movies_selected, genre = reactive(input$selected_genre))
+  callModule(mod_cluster_server, "cluster_ui_1", data = movies_selected)
 }
