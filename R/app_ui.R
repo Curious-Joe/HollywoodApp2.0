@@ -57,8 +57,7 @@ app_ui <- function(request) {
       tabItems(
         tabItem(tabName = 'dashboard', mod_summary_ui("summary_ui_tab1")),
         tabItem(tabName = 'plots', mod_biv_analysis_ui("biv_analysis_ui_1")),
-        tabItem(tabName = "model", mod_cluster_ui("cluster_ui_1")),
-        tabItem(tabName = 'data')
+        tabItem(tabName = "model", mod_cluster_ui("cluster_ui_1"))
       )
     ),
     
