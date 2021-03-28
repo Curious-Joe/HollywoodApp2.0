@@ -1,6 +1,6 @@
 Package: HollywoodMovies2.0
 Title: Explore Knn with Hollywood Movies
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: person('Arafath', 'Hossain', email = 'a.h.fahad90@gmail.com', role = c('cre', 'aut'))
 Description: This Shiny app demonstrte how K nearest neighbor can be used to group 
   observations based on their features. For demonstration purpose, a dataset of Hollywood movies 
