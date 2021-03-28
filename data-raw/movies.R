@@ -4,5 +4,5 @@ movies <- read.csv("C:/Users/ahfah/Desktop/Data Science Projects/Shiny app with 
 movies$title <- stringi::stri_trans_general(movies$title, "latin-ascii")
 movies <- movies %>%
   mutate(profit = gross - budget)
-usethis::use_data(
-  movies, overwrite = TRUE)
+
+usethis::use_data(movies, overwrite = TRUE, internal = FALSE)
